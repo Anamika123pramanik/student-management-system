@@ -56,8 +56,7 @@ python manage.py runserver
 
 ## Live Demo
 
-https://anamika123pramanik.github.io/student-management-system/
-
+Deployment in progress
 ---
 
 ## Author
