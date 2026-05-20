@@ -1,0 +1,553 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sidebar Links */
+.sidebar a {
+    display: block;
+    padding: 13px 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #facc15;
+    transition: 0.3s ease;
+}
+
+/* Animated Line */
+.sidebar a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #b89a8ad6, black, transparent);
+    opacity: 0.7;
+}
+
+/* Animation Only Once on Hover */
+.sidebar a:hover::before {
+    animation: shine 0.8s linear;
+}
+
+/* Keyframes */
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Hover Effect */
+.sidebar a:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+}
+
+/* Active Link */
+.sidebar a.active {
+    background: #fff8dc;
+    color: black;
+}
+        body {
+            background: #f4f6f9;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background: #321f15d6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 25px;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+        }
+
+        .sidebar h3 {
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .sidebar span {
+            color: #facc15;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .sidebar a:hover {
+            background: #fff3cd;
+            color: #000;
+        }
+
+        /* Main Content */
+        .content {
+            margin-left: 290px;
+            padding: 40px;
+        }
+
+        .card-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .card-box h2 {
+            color: #f59e0b;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .card-box p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <h3>Admin <span>Panel</span></h3>
+
+        <a href="#chancellor">Chancellor</a>
+
+        <a href="#prochancellor">Pro-Chancellor</a>
+
+        <a href="#vicechancellor">Vice-Chancellor</a>
+
+        <a href="#registrar">Registrar</a>
+
+        <a href="#finance">Finance Officer</a>
+
+        <a href="#controller">Controller of Examination</a>
+
+        <a href="#vigilance">Chief Vigilance Officer</a>
+
+        <a href="#academic">Academic Council</a>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <div class="card-box" id="chancellor">
+            <h2>Chancellor</h2>
+            <p>
+                I abide by Collin Powell who says “A dream doesn’t become a reality through magic, it takes sweat, determination, and hard work”.
+
+I have always believed and lived that knowledge survives stronger than imagination; history stands low than myth, the dreams stands more firm than fact and experiences is always ruled by triumph. “Shamika University” concede to these at every step propelling towards success.
+
+In the days of enactment, we inherited nothing harder than a core plan, a layout but it was the vision and robust endeavor of each associate to reach out something that shall be termed wondrous and be confounding.
+At several milestones, the campus brimmed with presence of educationists and dignitaries from the Kolahan University as well as most from the distant niche too. Like every year our very own inkling, “HINDI MAHOTSAV”, witnessed some exclusive and au-courant combats designed keeping in mind versatility of the students. The elevating participation has proved its growing acceptance and appreciation serving a motivation for us.<br>
+<br>
+
+It is always a significant shake when our batch of students propitiously Graduates and walks into the service of nation carrying a blend of confidence and commitment in their personality and to make this momentous the first Farewell and Graduation Day was revered in the most prodigious way.
+
+This year paramount execution was NATIONAL SEMINAR that luminously established the relation and role of education in solving the scrape of environmental degradation. Inexorably, steadily we have peregrinated a long passage but still longer one to go. Indeed, this essence of boom, has been earned and knuckled down over the time by consolidation of all, inclining on one common table with motto of defining the BEST in all true terms.
+<br>
+My emotions in words of Robert Frost.<br>
+<br>
+
+The woods are lovely dark and deep, but i have promises to keep,<br>
+and miles to go before I sleep<br>
+and miles to go before I sleep.<br>
+
+
+
+            </p>
+        </div>
+
+        <div class="card-box" id="prochancellor">
+            <h2>Pro-Chancellor</h2>
+            <p>
+                It gives me great pride and immense pleasure to be a part of Shamika University fraternity in the role of a Pro- Chancellor. I would like to welcome you to this unique and prestigious University which is driven by its guiding principle of providing good quality academic services. We, at Shamika University strongly believe that when a student graduates from a university, there must be an affirmative change in her/his knowledge, skills, behaviour and attitude in such a manner that she/he is prepared in taking professional responsibility or the work responsibility at the employer’s end head-on. The entire teaching learning eco-system in Srinath University has been designed keeping this principle in mind. The above conviction and it strongly reflects in the curriculum, and outside the class activities. There is a complete focus on Outcome Based Education and Project Based Learning. The university has been imparting quality education through outcome and value based education system, supported by competent and learned faculty members who regularly update their knowledge through participating in national and international conferences, seminars and workshops.
+
+We strive to expand our horizons as we partner with other institutions locally, across India, and abroad.<br>
+<br>
+
+I am confident that the Srinath University fraternity will produce excellent scientists, technocrats, visionary leaders, competent researchers and teachers in the fields of science, engineering, humanities, management and social sciences, who will not only bring laurels to the university but also make the nation proud.
+
+Once you take admission in Shamika University, please be assured that you will be on the right track of your career–building, provided you are committed and career-oriented. I welcome you to Shamika University for the quest of KNOWLEDGE. Come and Build Your World.
+
+Here I would like to encourage our students in the words of  Jim Rohn:<br>
+<br>
+<br>
+
+
+Don’t wish it was easier wish you were better.<br>
+Don’t wish for less problems wish for more skills.<br>
+Don’t wish for less challenge wish for more wisdom.<br>
+
+            </p>
+        </div>
+
+        <div class="card-box" id="vicechancellor">
+            <h2>Vice-Chancellor</h2>
+            <p>
+                Message from
+Vice Chancellor
+Johar! It is my honour and pleasure to be able to lead Shamika University, a young and dynamic educational institute, which has emerged as an abode of holistic learning and all-round education. Founded in 2021 by the visionary entrepreneur and philanthropist, Mr. Sukhdeo Mahto and with the aid and assistance of Sandhya Sambhu Educational Trust, the University continues to inspire students towards higher education.
+
+The scene of higher education in India has been growing through tectonic shift with the emergence of new technology and innovation that makes learning an enjoyable experience.<br> Keeping pace with the global advent, Srinath University seeks to expand the domain of digital technology to all fields of study, ensuring the finest infrastructural development. The university promotes inter-disciplinary studies and believes in interactive learning. Developing digital library for the faculty and students and providing access to e-learning resources is our primary goal to make sure that there is never any hindrance in extracting knowledge.<br>
+<br>
+
+The university boasts of hosting a plethora of varied fields of studies- from engineering to management, science to humanities.<br>
+<br>
+
+Departments of Yoga and Fine Arts allows the students to maneuver their creative spirits under the guidance of the finest educators. Our vision is to expand our courses and bring the various vocational streams from medical to law, hotel and hospitality management to agriculture and fisheries within one grand campus. To us, education goes beyond the textbook knowledge and we out more emphasis on practical and pragmatic abilities than mere factual information. Our skilled faculty members engage the students by raising their curiosity and urge to learn.<br>
+<br>
+
+All the programs offered by Shamika University follow the Choice Based Credit System and Outcome based approach that does not restrict the students to a superficial, theoretical knowledge but gives them the direction to dive into the depths of understanding.The syllabus has been molded as per the New Education Policy which allows more freedom to the students in choosing their courses and subjects. The educators have also been trained to adopt the NEP 2020 with repeated seminars and workshops, ensuring a smooth transition.<br>
+<br>
+
+
+At Srinath University, we emphasize on hands-on training, experiential and participative learning and encourage the students to indulge in real-life problem-solving exercises instead of the traditional rote learning method of imparting lectures. We understand that education is a two-way teaching learning process. The management and teaching faculty leave no stone unturned to give the students a taste of the life outside the university campus by means of organising frequent visits to industries, securing them industrial internship and giving them practical assignments that will widen their scope of understanding. Srinath University has organized compulsory soft-skills and reasoning classes for students of all departments to train them for interviews as well for government jobs in future.
+
+With a fully functioning NSS unit, the university believes in carving students into responsible and charitable citizens than mere bread-earners for their families. The NSS unit of the university has adopted 5 villages under the Indian Government’s Unnat Bharat Abhiyan and regularly organizes events for awareness and benefit of the same. The NSS unit, with the help of the student volunteers, regularly organizes community service events within the university campus that broadens their horizon of thoughts and also gives them a platform to channelize their ideas.<br>
+<br>
+
+Srinath University trains the students to have the ability to question every wrong and take a stand against it by inducing in them a strain of compassion and empathy. We believe that imparting quality education and enabling the students with the desired confidence and passion, and above to carve out good human beings who will serve as assets to the nation, is the primary function of a university and we hope to stay dedicatedly on our path of righteousness.<br>
+
+            </p>
+        </div>
+
+        <div class="card-box" id="registrar">
+            <h2>Registrar</h2>
+            <p>
+                Message from
+THE REGISTRAR
+Greetings from Srinath University, Jamshedpur, Jharkhand. It gives me immense pleasure to extend a warm welcome to all visitors of Srinath University.
+
+At Srinath University, we are committed to aligning our academic and administrative practices with the vision of the National Education Policy (NEP) 2020, which emphasizes holistic, multidisciplinary, flexible, and learner-centric education. We believe that education must go beyond conventional boundaries to nurture critical thinking, creativity, ethical values, and lifelong learning.
+
+In accordance with NEP 2020, the University is progressively implementing academic flexibility through multidisciplinary programs, skill-based courses, multiple entry and exit options, academic credit transfer, and experiential learning opportunities. We are strengthening research, innovation, and industry collaboration to prepare our students for the evolving global landscape. Our university offers a diverse range of programs designed to meet the evolving demands of industry and society. With dedicated faculty, modern infrastructure, and a strong focus on research and skill development, we aim to empower our students to become responsible global citizens and leaders in their respective fields.
+
+Our administrative systems are designed to ensure transparency, efficiency, digital integration, and student-friendly services. We are continuously upgrading our academic processes, examination systems, and governance mechanisms to support outcome-based education and quality enhancement in line with national standards. Srinath University remains dedicated to creating an inclusive and equitable learning environment that promotes diversity, integrity, and excellence. We are committed to empowering our students with knowledge, skills, and values that enable them to contribute meaningfully to society and the nation. Through structured reforms and responsible governance, we aim to contribute meaningfully to India’s vision of becoming a global knowledge superpower.
+
+I invite students, parents, faculty members, and stakeholders to join us in this transformative journey towards building a progressive, knowledge-driven future. Together, let us pursue knowledge, innovation, and excellence.
+
+I invite students, parents, faculty members, and stakeholders to join us in this transformative journey towards building a progressive, knowledge-driven future. Together, let us pursue knowledge, innovation, and excellence.
+
+
+            </p>
+        </div>
+
+        <div class="card-box" id="finance">
+            <h2>Finance Officer</h2>
+            <p>
+                Finance Department
+The Finance Department oversees the institution’s financial management, safeguarding its fiscal stability while aiding in strategic decision-making.
+Their responsibilities encompass budgeting, accounting, fund allocation, risk management, and financial analysis, all aimed at ensuring the University runs efficiently and remains sustainable.
+This department’s work is critical to the University’s success, as it underpins the financial structure necessary for academic programs, research, and other key initiatives. Through effective resource management, the Finance Department plays a pivotal role in advancing the University’s mission and objectives.
+            </p>
+        </div>
+
+        <div class="card-box" id="controller">
+            <h2>Controller of Examination</h2>
+            <p>
+                Controller of Examination
+Srinath University promotes fair and transparent examination and assessment for assessing the extent of learning that happens in various programmes.
+The University ensures the quality of learning through continuous assessment and also continues with the tradition of term-end summative assessment. It has kept abreast with the global practices of assessment by adopting credit system based on relative grading /absolute grading as appropriate.
+The University has a well-developed examination software system with fully automated pre, conduct and post examination processes, including examination related student services viz., issue of transcript, duplicate documents, verification and attestation of documents. Improvements in the system are made as per requirements to refine the quality of processes and response time.
+
+            </p>
+        </div>
+
+        <div class="card-box" id="vigilance">
+            <h2>Chief Vigilance Officer</h2>
+            <p>
+                Chief Vigilance Officer
+In Srinath University, honesty and transparency are the pillars of our academic and administrative structures. Being the Chief Vigilance Officer, it is my sacred duty to ensure that these values are respected and every action within the institution is governed by the ethics of honesty, responsibility, and equity.
+
+Vigilance is not only about avoiding corruption—it is also about creating a culture in which ethical conduct is the standard and all stakeholders take it upon themselves to do what is right. I call upon the students, teachers, employees, and all who are part of Srinath University to be vigilant, report any unethical activities, and work positively towards our common goal of excellence.
+
+Let us join hands to construct a clean, responsible, and righteous society which embodies the real spirit of education and nation-building.
+            </p>
+        </div>
+
+        <div class="card-box" id="academic">
+            <h2>Academic Council</h2>
+            <p>
+               <div class="container mt-5">
+    <div class="row g-4">
+
+        <!-- Member 1 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Prof. (Dr.) Shiva Nand Singh</h5>
+                <p>Vice-Chancellor</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Chairperson</span>
+            </div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Dipak Kumar Shukla</h5>
+                <p>Dean Academics</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Bhavya Bhushan</h5>
+                <p>Associate Dean (Academics)</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Mr. O.P Sharma</h5>
+                <p>Controller of Examination</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 5 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Ms. Kulwider Kaur</h5>
+                <p>Librarian</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 6 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Pijush Mallick</h5>
+                <p>HOD Biotechnology</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 7 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Tarun Kumar Mahato</h5>
+                <p>HOD Mathematics</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 8 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Mr. Shashi Kant Singh</h5>
+                <p>Head, School of Engineering</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 9 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Mritunjay Mahato</h5>
+                <p>Head, Commerce & Management</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 10 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Shameemul Haque</h5>
+                <p>Head, IT School</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 11 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Surya Pratap Singh</h5>
+                <p>HOD Civil Engineering</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 12 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Dolly Chakraborty</h5>
+                <p>HOD Chemistry</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 13 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Shailesh Kumar Sarangi</h5>
+                <p>Assistant Dean, R&D</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 14 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Sudarshana Banerjee</h5>
+                <p>Assistant Dean, Curriculum</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 15 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Mr. Rahul Banik</h5>
+                <p>HOD Pharmacy</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 16 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Manorath Das</h5>
+                <p>Head, Humanities</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member</span>
+            </div>
+        </div>
+
+        <!-- Member 17 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Suchitra Behra</h5>
+                <p>HOD Education</p>
+                <small>Kolhan University</small>
+                <hr>
+                <span class="badge bg-dark">Educationist</span>
+            </div>
+        </div>
+
+        <!-- Member 18 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Mr. Kumar Vivek</h5>
+                <p>Director, GR8 Designs</p>
+                <small>Adityapur, Jamshedpur</small>
+                <hr>
+                <span class="badge bg-dark">Technocrat</span>
+            </div>
+        </div>
+
+        <!-- Member 19 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Dr. Shahla Jabeen</h5>
+                <p>Associate Professor</p>
+                <small>Women's University, Jamshedpur</small>
+                <hr>
+                <span class="badge bg-dark">Educationist</span>
+            </div>
+        </div>
+
+        <!-- Member 20 -->
+        <div class="col-md-3">
+            <div class="card shadow border-0 h-100 text-center p-3">
+                <h5 class="fw-bold text-warning">Mr. J. Rajesh</h5>
+                <p>Dy. Registrar</p>
+                <small>Srinath University</small>
+                <hr>
+                <span class="badge bg-dark">Member Secretary</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+            </p>
+        </div>
+
+    </div>
+
+    
+
+</body>
+
+</html>

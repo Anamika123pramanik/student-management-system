@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+    <style>
+/* =====================================
+   PROFESSIONAL UNIVERSITY DASHBOARD
+   WHITE VERSION
+======================================== */
+
+.dashboard-section {
+    padding: 90px 6%;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* Heading */
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.dashboard-header h2 {
+    font-size: 44px;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.dashboard-header p {
+    color: #475569;
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+/* Horizontal Scroll */
+.dashboard-scroll {
+
+    display: flex;
+    gap: 28px;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    padding-bottom: 20px;
+}
+
+/* Scrollbar */
+.dashboard-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-track {
+    background: #e2e8f0;
+    border-radius: 30px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg,#0ea5e9,#2563eb);
+    border-radius: 30px;
+}
+
+/* Cards */
+.dashboard-card {
+
+    min-width: 340px;
+    flex: 0 0 auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 26px;
+
+    padding: 35px 30px;
+
+    transition: 0.4s ease;
+
+    position: relative;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* Hover */
+.dashboard-card:hover {
+    transform: translateY(-12px);
+
+    border-color: #38bdf8;
+
+    box-shadow: 0 15px 35px rgba(56,189,248,0.18);
+}
+
+/* Top Glow */
+.dashboard-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: linear-gradient(90deg,yellow);
+
+    border-radius: 30px 30px 0 0;
+}
+
+/* Icon */
+.dashboard-icon {
+
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: linear-gradient(135deg,black);
+
+    margin-bottom: 25px;
+}
+
+.dashboard-icon i {
+    font-size: 34px;
+    color: #ffffff;
+}
+
+/* Title */
+.dashboard-card h3 {
+    color: #0f172a;
+    font-size: 26px;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+/* Paragraph */
+.dashboard-card p {
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+/* List */
+.dashboard-card ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-card ul li {
+
+    color: #334155;
+
+    margin-bottom: 12px;
+
+    font-size: 15px;
+}
+
+/* Button */
+.dashboard-btn {
+
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 12px;
+
+    background: rgba(165, 42, 42, 0.162);
+
+    color: black;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.dashboard-btn:hover {
+
+    transform: scale(1.05);
+
+    background: rgba(165, 42, 42, 0.25);
+
+    color: black;
+}
+/* Responsive */
+@media(max-width:768px){
+
+    .dashboard-header h2{
+        font-size: 34px;
+    }
+
+    .dashboard-card{
+        min-width: 290px;
+    }
+}
+    </style>
+
+ <section class="dashboard-section">
+
+    <div class="dashboard-header">
+        <h2>Student Dashboard</h2>
+
+        <p>
+            University academic management portal
+            with attendance, results, assignments,
+            notes, and timetable access.
+        </p>
+    </div>
+
+    <!-- Horizontal Scroll -->
+    <div class="dashboard-scroll">
+
+        <!-- Dashboard -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+                <i class="bi bi-speedometer2"></i>
+            </div>
+
+            <h3>Dashboard</h3>
+
+            <p>
+                Academic overview, notifications,
+                and latest university updates.
+            </p>
+
+            <ul>
+                <li>University Notifications</li>
+                <li>Student Quick Access</li>
+                <li>Academic Overview</li>
+                <li>Department Updates</li>
+            </ul>
+
+            <a href="#" class="dashboard-btn">
+                Open Dashboard
+            </a>
+
+        </div>
+
+        <!-- Students -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+                <i class="bi bi-people-fill"></i>
+            </div>
+
+            <h3>Students</h3>
+
+            <p>
+                Student profiles, enrollment details,
+                and department information.
+            </p>
+
+            <ul>
+                <li>Student Profiles</li>
+                <li>Enrollment Records</li>
+                <li>Department Details</li>
+                <li>Academic Information</li>
+            </ul>
+
+            <a href="#" class="dashboard-btn">
+                View Students
+            </a>
+
+        </div>
+
+        <!-- Attendance -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+                <i class="bi bi-calendar-check-fill"></i>
+            </div>
+
+            <h3>Attendance</h3>
+
+            <p>
+                Track daily attendance and semester
+                percentage reports.
+            </p>
+
+            <ul>
+                <li>Daily Attendance</li>
+                <li>Semester Reports</li>
+                <li>Attendance Analytics</li>
+                <li>Faculty Monitoring</li>
+            </ul>
+
+            <a href="#" class="dashboard-btn">
+                Check Attendance
+            </a>
+
+        </div>
+
+
+        <!-- Assignments -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+                <i class="bi bi-journal-text"></i>
+            </div>
+
+            <h3>Assignments</h3>
+
+            <p>
+                Submit projects, assignments,
+                and monitor deadlines.
+            </p>
+
+            <ul>
+                <li>Project Submission</li>
+                <li>Assignment Upload</li>
+                <li>Deadline Tracking</li>
+                <li>Faculty Review</li>
+            </ul>
+
+            <a href="#" class="dashboard-btn">
+                Open Assignments
+            </a>
+
+        </div>
+
+        <!-- Notes -->
+        <div class="dashboard-card">
+
+            <div class="dashboard-icon">
+                <i class="bi bi-file-earmark-text-fill"></i>
+            </div>
+
+            <h3>Notes</h3>
+
+            <p>
+                Download lecture notes,
+                PDFs, and study materials.
+            </p>
+
+            <ul>
+                <li>Lecture PDFs</li>
+                <li>Study Materials</li>
+                <li>E-Books Access</li>
+                <li>Research Documents</li>
+            </ul>
+
+            <a href="#" class="dashboard-btn">
+                Download Notes
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+</body>
+
+</html>
+

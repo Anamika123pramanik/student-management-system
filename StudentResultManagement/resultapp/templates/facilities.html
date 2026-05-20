@@ -1,0 +1,263 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background: #f5f7fb;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sidebar Links */
+.sidebar a {
+    display: block;
+    padding: 13px 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #facc15;
+    transition: 0.3s ease;
+}
+
+/* Animated Line */
+.sidebar a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #facc15, #321f15d6);
+    opacity: 0.7;
+}
+
+/* Animation Only Once on Hover */
+.sidebar a:hover::before {
+    animation: shine 0.8s linear;
+}
+
+/* Keyframes */
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Hover Effect */
+.sidebar a:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+}
+
+/* Active Link */
+.sidebar a.active {
+    background: #fff8dc;
+    color: black;
+}
+
+        /* Sidebar */
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background: #321f15d6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 25px;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 35px;
+            color: white;
+        }
+
+        .logo span {
+            color: #facc15;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+
+        .sidebar a:hover,
+        .sidebar a.active {
+            background: #fff3cd;
+            color: black;
+        }
+
+        /* Content */
+        .content {
+            margin-left: 290px;
+            padding: 40px;
+        }
+
+        .facility-card {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
+        .facility-card h2 {
+            color: #f59e0b;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .facility-card p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <div class="logo">
+            Our<span>Facilities</span>
+        </div>
+
+        <a href="#sports" class="active">Sports</a>
+
+        <a href="#ncc">NCC / NSS</a>
+
+        <a href="#hostel">Hostel Facilities</a>
+
+        <a href="#placement">Placement Cell</a>
+
+        <a href="#health">Health Facilities</a>
+
+        <a href="#antiragging">Anti-Ragging Cell</a>
+
+        <a href="#opportunity">Opportunity Cell</a>
+
+        <a href="#labs">Labs</a>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <div class="facility-card" id="sports">
+            <h2>Sports</h2>
+            <p>
+                The university encourages students to participate in indoor and outdoor sports activities.
+                Facilities for cricket, football, badminton, volleyball, and athletics are available.
+                Sports events and competitions are organized regularly to improve teamwork, fitness,
+                leadership qualities, and overall personality development among students.
+            </p>
+        </div>
+
+        <div class="facility-card" id="ncc">
+            <h2>NCC / NSS</h2>
+            <p>
+                NCC and NSS programs help students develop discipline, leadership, and social responsibility.
+                Students participate in social service activities, awareness campaigns, camps, and community
+                development programs. These activities encourage patriotism, confidence, teamwork, and
+                responsibility toward society and the nation.
+            </p>
+        </div>
+
+        <div class="facility-card" id="hostel">
+            <h2>Hostel Facilities</h2>
+            <p>
+                The university provides comfortable hostel facilities for boys and girls with proper safety,
+                cleanliness, and security. Hostel rooms are well-maintained and include Wi-Fi, study areas,
+                dining facilities, and recreational spaces to ensure a safe and supportive environment for students.
+            </p>
+        </div>
+
+        <div class="facility-card" id="placement">
+            <h2>Placement Cell and Activities</h2>
+            <p>
+                The placement cell organizes training sessions, workshops, mock interviews, and campus
+                recruitment drives. Students receive guidance in communication skills, aptitude preparation,
+                resume building, and career planning to improve job opportunities and professional development.
+            </p>
+        </div>
+
+        <div class="facility-card" id="health">
+            <h2>Health Facilities</h2>
+            <p>
+                Health facilities are available for students and staff to ensure medical support during emergencies.
+                The university provides first-aid services, regular health check-ups, medical consultation, and
+                awareness programs related to physical and mental well-being.
+            </p>
+        </div>
+
+        <div class="facility-card" id="antiragging">
+            <h2>Anti-Ragging Cell</h2>
+            <p>
+                The Anti-Ragging Cell ensures a safe and friendly campus environment for all students.
+                Strict rules are followed to prevent ragging and harassment. Awareness programs and monitoring
+                activities are conducted regularly to maintain discipline and student safety within the campus.
+            </p>
+        </div>
+
+        <div class="facility-card" id="opportunity">
+            <h2>Opportunity Cell</h2>
+            <p>
+                The Opportunity Cell guides students regarding internships, scholarships, higher education,
+                skill development, and career opportunities. The cell organizes seminars, counseling sessions,
+                and career awareness programs to help students achieve academic and professional success.
+            </p>
+        </div>
+
+        <div class="facility-card" id="labs">
+            <h2>Labs</h2>
+            <p>
+                The university provides modern laboratories equipped with advanced tools and technologies.
+                Students gain practical knowledge through experiments, research activities, and hands-on learning.
+                Labs are maintained properly to support innovation, creativity, and technical skill development.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

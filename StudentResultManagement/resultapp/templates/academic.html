@@ -1,0 +1,615 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniversityHub Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f4f6f9;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ================= SIDEBAR (CHANGED TO ADMIN STYLE) ================= */
+
+        .sidebar {
+            width: 260px;
+            height: 100vh;
+            background: #321f15d6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 25px;
+            overflow-y: auto;
+            box-shadow: 5px 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .logo span {
+            color: #facc15;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 13px 18px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            color: black;
+            background: white;
+            border: 2px solid #facc15;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+
+        /* Shine Effect */
+        .sidebar a::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #b89a8ad6,
+                black,
+                transparent
+            );
+            opacity: 0.7;
+        }
+
+        .sidebar a:hover::before {
+            animation: shine 0.8s linear;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .sidebar a:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(250, 204, 21, 0.3);
+            background: #fff8dc;
+            color: black;
+        }
+
+        .sidebar a.active {
+            background: #fff8dc;
+            color: black;
+        }
+
+        /* ================= CONTENT ================= */
+
+        .content {
+            margin-left: 290px;
+            padding: 40px;
+        }
+
+        /* ================= CARD STYLE (ADMIN STYLE) ================= */
+
+        .card-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid #facc15;
+        }
+
+        .card-box h2 {
+            color: black;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .card-box p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* ================= FACILITY CARD ================= */
+
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .facility-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border-top: 4px solid #facc15;
+            transition: 0.3s ease;
+        }
+
+        .facility-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .facility-card i {
+            font-size: 40px;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        .facility-card h3 {
+            color: black;
+            font-weight: 600;
+        }
+
+        .facility-card p {
+            color: #6b7280;
+        }
+
+       body {
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+.library-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.library-header h2 {
+  font-size: 36px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.library-header p {
+  opacity: 10;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Controls */
+.library-controls {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.library-controls input,
+.library-controls select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #d2b48c;
+  outline: none;
+  background: #fffaf5;
+  color: #5c3a21;
+}
+
+/* Grid */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* BOOK CARDS (BROWN THEME) */
+.book-card {
+  background: linear-gradient(145deg, #b89a8ad6);
+  color: rgba(27, 13, 13, 0.34);
+  border-radius: 16px;
+  padding: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #3d2a1a;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(92,58,33,0.5);
+}
+
+/* Title */
+.book-card h3 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+/* Category tag */
+.book-card span {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  color: black;
+}
+
+    </style>
+    <script>
+const searchBox = document.getElementById("searchBox");
+const categoryFilter = document.getElementById("categoryFilter");
+const books = document.querySelectorAll(".book-card");
+
+function filterBooks() {
+  const searchText = searchBox.value.toLowerCase();
+
+  books.forEach(book => {
+    const title = book.querySelector("h3").innerText.toLowerCase();
+
+    if (title.includes(searchText)) {
+      book.style.display = "block";
+    } else {
+      book.style.display = "none";
+    }
+  });
+}
+
+if(searchBox){
+  searchBox.addEventListener("input", filterBooks);
+}
+</script>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">University<span>Hub</span></div>
+
+    <a href="#academic-calendar">Academic Calendar</a>
+    <a href="#library">Library</a>
+    <a href="#collaboration">Collaboration</a>
+    <a href="#academic-examination">Examination</a>
+
+</div>
+
+<!-- ================= CONTENT ================= -->
+
+<div class="content">
+<section id="academic-calendar">
+    <h2 class="section-heading mb-4">
+    <b>Academic Calendar 2025–26 (Overview)</b>
+</h2>
+      
+
+    <div class="card-box">
+
+          <div class="accordion" id="calendarAccordion">
+
+            <!-- 2024-25 Holidays -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#h2024">
+                        Holiday List 2024–25
+                    </button>
+                </h2>
+                <div id="h2024" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>09 Aug - Raksha Bandhan</li>
+                            <li>15 Aug - Independence Day</li>
+                            <li>16 Aug - Krishna Janmashtami</li>
+                            <li>26 Aug - Ganesh Chaturthi</li>
+                            <li>27 Sept – 02 Oct - Durga Puja</li>
+                            <li>02 Oct - Gandhi Jayanti</li>
+                            <li>20–21 Oct - Deepawali</li>
+                            <li>27–28 Oct - Chhath Puja</li>
+                            <li>05 Nov - Guru Nanak Jayanti</li>
+                            <li>25–31 Dec - Winter Vacation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2026 Holidays -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#h2026">
+                        Holiday List 2026
+                    </button>
+                </h2>
+                <div id="h2026" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>01 Jan - New Year</li>
+                            <li>14–15 Jan - Lohri / Makar Sankranti</li>
+                            <li>26 Jan - Republic Day</li>
+                            <li>16 Feb - Mahashivratri</li>
+                            <li>04–05 Mar - Holi</li>
+                            <li>20–21 Mar - Eid Ul Fitr</li>
+                            <li>14 Apr - Ambedkar Jayanti</li>
+                            <li>01 May - Budh Purnima</li>
+                            <li>15 Aug - Independence Day</li>
+                            <li>02 Oct - Gandhi Jayanti</li>
+                            <li>25–31 Dec - Christmas Vacation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Academic Schedule -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#schedule">
+                        Academic Schedule
+                    </button>
+                </h2>
+                <div id="schedule" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Orientation: 09 Aug – 17 Aug 2025</li>
+                            <li>Classes Start: 18 Aug 2025</li>
+                            <li>Odd Semester Exam: 12 Jan – 14 Feb 2026</li>
+                            <li>Even Semester Start: 16 Feb 2026</li>
+                            <li>Even Semester Exam: 25 Jun – 20 Jul 2026</li>
+                            <li>Results: March & August (Tentative)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Examination -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exam">
+                        Examination & Events
+                    </button>
+                </h2>
+                <div id="exam" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>1st Sessional: Oct 2025 / Mar 2026</li>
+                            <li>2nd Sessional: Nov 2025 / May 2026</li>
+                            <li>Practical Exams: Jan & July 2026</li>
+                            <li>Convocation: 08 Aug 2026 (Tentative)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <section id="library">
+  <div class="library-header">
+        <h2>Library</h2>
+    <p><b>Shamika University provides access to the information resources required to support the rigorous academic and professional demands of a top-tier university environment.</b><br>
+
+In addition to maintaining a comprehensive print collection, the library offers extensive access to a wide range of digital and online information resources. The experienced team of library professionals and academic support staff provides research guidance, personalized consultations, and email-based reference assistance, ensuring that students and faculty can effectively utilize all available resources.
+
+The library at Shamika University functions as an integrated Knowledge Resource Centre, equipped with a vast collection of books, magazines, Indian and international journals, as well as online databases and e-journals. These resources collectively support all areas of teaching, learning, research, and innovation across disciplines.</p>
+  </div>
+
+  
+
+  <section class="card-box">
+
+  
+
+  <!-- INFRASTRUCTURE -->
+  <h3>🏗 Infrastructure</h3>
+  <ul>
+    Technology Enabled Classrooms<br>
+    Computer Labs<br>
+    Library<br>
+    Ground & Lawn<br>
+    College Cafeteria<br>
+    Auditorium<br>
+    Accommodation<br>
+  </ul>
+
+  <hr>
+
+  <!-- DOCUMENTS -->
+  <h3>📄 University Documents</h3>
+  <ul>
+    Shamika University Public Self Disclosure<br>
+    Updated Shamika University Proforma<br>
+    Shamika University Proforma<br>
+  </ul>
+
+  <hr>
+
+  <!-- QUICK LINKS -->
+  <h3>🔗 Quick Links</h3>
+  <ul>
+    Home<br>
+    About<br>
+    Courses<br>
+    Academics<br>
+    Notice<br>
+    Placement<br>
+    Contact<br>
+    Subscribe<br>
+    Terms of Service<br>
+    Privacy Policy<br>
+  </ul>
+
+  <hr>
+
+  <!-- COURSES -->
+  <h3>🎓 Courses Offered</h3>
+  <ul>
+    Humanities & Social Science<br>
+    Fine Arts<br>
+    Commerce & Management<br>
+    Computer Application<br>
+    Science<br>
+    Engineering<br>
+    Health Science<br>
+    Education<br>
+  </ul>
+
+</section>
+</section>
+    <section id="collaboration">
+    <h2 class="mb-4 fw-bold">Collaboration</h2>
+
+    <div class="facility-grid">
+
+        <div class="facility-card">
+            <i class="bi bi-globe2"></i>
+            <h3>International Partnerships</h3>
+            <p>Global collaborations with reputed universities and institutions.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-buildings-fill"></i>
+            <h3>Industry Connect</h3>
+            <p>Strong industry tie-ups for internships and placements.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-mortarboard-fill"></i>
+            <h3>Academic Exchange</h3>
+            <p>Student and faculty exchange programs with partner universities.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-lightbulb-fill"></i>
+            <h3>Research Collaboration</h3>
+            <p>Joint research projects and innovation-driven initiatives.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-laptop-fill"></i>
+            <h3>Technology Partnership</h3>
+            <p>Collaborations with tech companies for advanced learning.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-people-fill"></i>
+            <h3>Community Engagement</h3>
+            <p>Programs focused on social responsibility and outreach.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-journal-richtext"></i>
+            <h3>Publication Network</h3>
+            <p>Partnerships for journals, publications, and academic resources.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-mic-fill"></i>
+            <h3>Workshops & Seminars</h3>
+            <p>Expert sessions, conferences, and skill development workshops.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-bar-chart-fill"></i>
+            <h3>Corporate Training</h3>
+            <p>Professional development and industry-oriented training programs.</p>
+        </div>
+
+        <div class="facility-card">
+            <i class="bi bi-award-fill"></i>
+            <h3>Innovation Hub</h3>
+            <p>Startup incubation, entrepreneurship, and innovation support.</p>
+        </div>
+
+    </div>
+</section>
+
+<br>
+<section id="academic-examination">
+
+    <h2 class="mb-4 fw-bold">Examination Management</h2>
+
+    <div class="facility-grid">
+
+        <!-- ONLINE EXAM SECTION -->
+        <div class="facility-card">
+            <i class="bi bi-laptop-fill"></i>
+
+            <h3>Online Examination System</h3>
+
+            <p>
+                Shamika University provides a secure and technology-enabled
+                online examination platform designed for smooth and transparent
+                assessments.
+            </p>
+
+            <ul>
+                <li>Secure Student Login Portal</li>
+                <li>Real-Time Exam Monitoring</li>
+                <li>Auto Submission System</li>
+                <li>Instant Attendance Verification</li>
+                <li>Digital Question Paper Access</li>
+                <li>Fast Result Processing</li>
+            </ul>
+        </div>
+
+        <!-- EXAM CONTROL SECTION -->
+        <div class="facility-card">
+            <i class="bi bi-shield-check"></i>
+
+            <h3>Examination Control Department</h3>
+
+            <p>
+                The Examination Control Department ensures fair evaluation,
+                transparent academic processes, and proper management of
+                university examinations.
+            </p>
+
+            <ul>
+                <li>Semester Examination Management</li>
+                <li>Marks & Result Verification</li>
+                <li>Student Record Maintenance</li>
+                <li>Admit Card Generation</li>
+                <li>Confidential Data Handling</li>
+                <li>Academic Integrity & Monitoring</li>
+            </ul>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

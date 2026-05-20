@@ -1,0 +1,1771 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Modern University Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+/* =========================================
+   UPDATED MODERN UNIVERSITY DASHBOARD
+   SAME COLORS - NEW DESIGN
+============================================ */
+
+body{
+    background: #f4f7fb;
+    overflow-x: hidden;
+}
+
+/* =========================
+   SIDEBAR
+============================ */
+
+.sidebar{
+
+    width: 255px;
+    height: 100vh;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    padding: 28px 20px;
+
+    background: #321f15d6;
+
+    border-right: 1px solid rgba(255,255,255,0.08);
+
+    box-shadow: 5px 0 20px rgba(0,0,0,0.08);
+
+    overflow-y: auto;
+}
+
+/* Logo */
+
+.logo{
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    color: white;
+
+    margin-bottom: 45px;
+}
+
+.logo span{
+    color: #facc15;
+}
+
+/* Menu Title */
+
+.menu-title{
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 18px;
+}
+
+/* Sidebar Links */
+
+.sidebar a{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 14px 18px;
+
+    margin-bottom: 14px;
+
+    border-radius: 16px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    background: rgba(255,255,255,0.05);
+
+    transition: 0.35s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* Left Border Animation */
+
+.sidebar a::before{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #facc15;
+
+    transform: scaleY(0);
+
+    transition: 0.3s ease;
+}
+
+.sidebar a:hover::before,
+.sidebar a.active::before{
+
+    transform: scaleY(1);
+}
+
+/* Hover */
+
+.sidebar a:hover{
+
+    transform: translateX(6px);
+
+    background: rgba(255,255,255,0.12);
+
+    color: #facc15;
+}
+
+/* Active */
+
+.sidebar a.active{
+
+    background: rgba(255,255,255,0.14);
+
+    color: #facc15;
+}
+
+.sidebar a i{
+    font-size: 18px;
+}
+
+/* =========================
+   MAIN
+============================ */
+
+.main{
+
+    margin-left: 255px;
+
+    padding: 35px;
+}
+
+/* =========================
+   TOPBAR
+============================ */
+
+.topbar{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.topbar h2{
+
+    font-size: 36px;
+
+    font-weight: 700;
+
+    color: #111827;
+}
+
+.topbar p{
+
+    color: #6b7280;
+
+    margin-top: 8px;
+}
+
+/* Search Box */
+
+.search-box{
+
+    background: white;
+
+    padding: 13px 18px;
+
+    border-radius: 16px;
+
+    width: 300px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+}
+
+.search-box input{
+
+    border: none;
+
+    outline: none;
+
+    width: 100%;
+
+    background: transparent;
+}
+
+/* =========================
+   DASHBOARD CARDS
+============================ */
+
+.dashboard-card{
+
+    padding: 28px;
+
+    border-radius: 24px;
+
+    color: black;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.35s ease;
+
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.dashboard-card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 18px 35px rgba(0,0,0,0.10);
+}
+
+/* Glass Overlay */
+
+.dashboard-card::after{
+
+    content: "";
+
+    position: absolute;
+
+    top: -40px;
+    right: -40px;
+
+    width: 120px;
+    height: 120px;
+
+    background: rgba(255,255,255,0.18);
+
+    border-radius: 50%;
+}
+
+/* Text */
+
+.dashboard-card h6{
+
+    font-size: 15px;
+
+    opacity: 0.9;
+}
+
+.dashboard-card h2{
+
+    margin-top: 10px;
+
+    font-size: 38px;
+
+    font-weight: 700;
+}
+
+/* Icon */
+
+.dashboard-card i{
+
+    position: absolute;
+
+    right: 20px;
+    bottom: 18px;
+
+    font-size: 52px;
+
+    opacity: 0.18;
+}
+
+/* Original Colors */
+
+.bg-purple{
+    background: linear-gradient(90deg,#b89a8ad6);
+}
+
+.bg-yellow{
+    background: linear-gradient(90deg,#b89a8ad6);
+}
+
+.bg-blue{
+    background: linear-gradient(90deg,#b89a8ad6);
+}
+
+.bg-green{
+    background: linear-gradient(90deg,#b89a8ad6);
+}
+
+/* =========================
+   CHART BOX
+============================ */
+
+.chart-box{
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* Bars */
+
+.chart-bars{
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-around;
+
+    height: 260px;
+
+    margin-top: 30px;
+}
+
+.bar-group{
+    text-align: center;
+}
+
+.bar1,
+.bar2{
+
+    width: 24px;
+
+    border-radius: 14px;
+
+    display: inline-block;
+
+    margin: 0 4px;
+
+    transition: 0.3s ease;
+}
+
+.bar1{
+    background: #321f15d6;
+}
+
+.bar2{
+    background: #81614dd6;
+}
+
+.bar1:hover,
+.bar2:hover{
+
+    transform: scaleY(1.08);
+}
+
+/* =========================
+   CALENDAR BOX
+============================ */
+
+.calendar-box{
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* Calendar Days */
+
+.calendar-days{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin: 22px 0;
+}
+
+.calendar-days div{
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f3f4f6;
+
+    transition: 0.3s ease;
+}
+
+.calendar-days div:hover{
+
+    transform: scale(1.08);
+}
+
+.calendar-days .active-day{
+
+    background: #facc15;
+
+    color: red;
+
+    font-weight: 700;
+}
+
+/* Agenda */
+
+.agenda-item{
+
+    background: #f9fafb;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    margin-bottom: 15px;
+
+    transition: 0.3s ease;
+
+    border: 1px solid #eef2f7;
+}
+
+.agenda-item:hover{
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+}
+
+.agenda-item h6{
+
+    margin-bottom: 6px;
+
+    font-weight: 600;
+}
+
+.agenda-item p{
+
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+/* =========================
+   RESPONSIVE
+============================ */
+
+@media(max-width:991px){
+
+    .sidebar{
+
+        width: 100%;
+
+        height: auto;
+
+        position: relative;
+    }
+
+    .main{
+        margin-left: 0;
+    }
+
+    .topbar{
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .search-box{
+        width: 100%;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    scroll-margin-top: 80px;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ======================================
+         SIDEBAR
+    ========================================= -->
+    <div id="dashboard" class="topbar">
+
+    <div class="sidebar">
+
+        <div class="logo">
+            University<span>Hub</span>
+        </div>
+
+        <div class="menu-title">
+            Main Menu
+        </div>
+
+        <a href="#dashboard" class="active">
+    <i class="bi bi-grid"></i>
+    Dashboard
+</a>
+
+<a href="#campus">
+    <i class="bi bi-building"></i>
+    Campus
+</a>
+
+<a href="#attendance">
+    <i class="bi bi-calendar-check"></i>
+    Attendance
+</a>
+
+<a href="#messages">
+    <i class="bi bi-chat-dots"></i>
+    Messages
+</a>
+
+</div>
+    </div>
+
+    <!-- ======================================
+         MAIN CONTENT
+    ========================================= -->
+
+    <div class="main">
+
+        <!-- Topbar -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h2>
+                    University Management Dashboard
+                </h2>
+
+                <p>
+                    Modern ERP Dashboard for Campus Management
+                </p>
+
+            </div>
+
+            
+        </div>
+
+        <!-- Dashboard Cards -->
+
+        <div class="row g-4">
+
+            <div class="col-md-3">
+
+                <div class="dashboard-card bg-purple">
+
+                    <h6>Total Students</h6>
+
+                    <h2>124,684</h2>
+
+                    <i class="bi bi-people"></i>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="dashboard-card bg-yellow">
+
+                    <h6>Total Teachers</h6>
+
+                    <h2>2,379</h2>
+
+                    <i class="bi bi-person-badge"></i>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="dashboard-card bg-blue">
+
+                    <h6>Total Staffs</h6>
+
+                    <h2>1,300</h2>
+
+                    <i class="bi bi-person-workspace"></i>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="dashboard-card bg-green">
+
+                    <h6>Total Awards</h6>
+
+                    <h2>5,800</h2>
+
+                    <i class="bi bi-trophy"></i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ======================================
+     CAMPUS SECTION
+====================================== -->
+
+<section id="campus" class="campus-section">
+    <!-- Header -->
+
+    <div class="campus-header">
+
+        <h2>University Campus</h2>
+
+        <p>
+            Explore modern university infrastructure,
+            research facilities, libraries,
+            smart classrooms, and innovation spaces.
+        </p>
+        <img src="{% static 'campus.jpg' %}" class="campus-banner">
+
+    </div>
+
+    <!-- Campus Grid -->
+
+    <div class="row g-4">
+
+        <!-- Main Campus -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="campus-card">
+
+                <div class="campus-icon">
+                    <i class="bi bi-building"></i>
+                </div>
+
+                <h3>Main Campus</h3>
+
+                <p>
+                    Advanced university campus with
+                    modern classrooms, administration,
+                    and academic facilities.
+                </p>
+
+                <ul>
+                    <li>Digital Classrooms</li>
+                    <li>Smart Campus Network</li>
+                    <li>Academic Blocks</li>
+                    <li>Central Administration</li>
+                </ul>
+
+                
+
+            </div>
+
+        </div>
+
+        <!-- Research Labs -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="campus-card">
+
+                <div class="campus-icon">
+                    <i class="bi bi-cpu"></i>
+                </div>
+
+                <h3>Research Labs</h3>
+
+                <p>
+                    Innovation and research laboratories
+                    for AI, robotics,
+                    engineering, and science projects.
+                </p>
+
+                <ul>
+                    <li>AI & Robotics Labs</li>
+                    <li>Computer Centers</li>
+                    <li>Engineering Workshops</li>
+                    <li>Research Facilities</li>
+                </ul>
+
+                
+
+            </div>
+
+        </div>
+
+        <!-- Library -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="campus-card">
+
+                <div class="campus-icon">
+                    <i class="bi bi-book"></i>
+                </div>
+
+                <h3>Central Library</h3>
+
+                <p>
+                    Digital library system with
+                    journals, research materials,
+                    and modern reading facilities.
+                </p>
+
+                <ul>
+                    <li>Digital Resources</li>
+                    <li>Reading Halls</li>
+                    <li>E-Library Access</li>
+                    <li>Research Journals</li>
+                </ul>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Sports -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="campus-card">
+
+                <div class="campus-icon">
+                    <i class="bi bi-trophy"></i>
+                </div>
+
+                <h3>Sports Complex</h3>
+
+                <p>
+                    Modern sports infrastructure
+                    for indoor and outdoor
+                    athletic activities.
+                </p>
+
+                <ul>
+                    <li>Indoor Stadium</li>
+                    <li>Football Ground</li>
+                    <li>Basketball Court</li>
+                    <li>Fitness Center</li>
+                </ul>
+
+               
+
+            </div>
+
+        </div>
+
+        <!-- Hostel -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="campus-card">
+
+                <div class="campus-icon">
+                    <i class="bi bi-house-door"></i>
+                </div>
+
+                <h3>Hostel Facilities</h3>
+
+                <p>
+                    Comfortable student hostel
+                    environment with modern
+                    accommodation services.
+                </p>
+
+                <ul>
+                    <li>WiFi Enabled Rooms</li>
+                    <li>24/7 Security</li>
+                    <li>Dining Facilities</li>
+                    <li>Study Environment</li>
+                </ul>
+
+                
+
+            </div>
+
+        </div>
+
+        <!-- Innovation -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="campus-card">
+
+                <div class="campus-icon">
+                    <i class="bi bi-lightbulb"></i>
+                </div>
+
+                <h3>Innovation Center</h3>
+
+                <p>
+                    Startup incubation and innovation
+                    center supporting student
+                    entrepreneurship and projects.
+                </p>
+
+                <ul>
+                    <li>Startup Support</li>
+                    <li>Innovation Hub</li>
+                    <li>Project Development</li>
+                    <li>Mentorship Programs</li>
+                </ul>
+
+                
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* ======================================
+   CAMPUS SECTION
+====================================== */
+
+
+
+.campus-section{
+
+    margin-top: 50px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 28px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Header */
+
+.campus-header{
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.campus-header h2{
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    margin-bottom: 15px;
+}
+
+.campus-header p{
+
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #6b7280;
+
+    line-height: 1.8;
+}
+
+/* Campus Card */
+
+
+.campus-card{
+
+    background: #f9fafb;
+
+    border-radius: 24px;
+
+    padding: 32px;
+
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.35s ease;
+
+    border: 1px solid #eef2f7;
+}
+
+.campus-card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 16px 35px rgba(0,0,0,0.08);
+}
+
+/* Top Border */
+
+.campus-card::before{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: #321f15d6;
+}
+
+/* Icon */
+
+.campus-icon{
+
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background: linear-gradient(90deg,#b89a8ad6);
+
+    margin-bottom: 24px;
+}
+
+.campus-icon i{
+
+    font-size: 34px;
+
+    color: black;
+}
+
+/* Heading */
+
+.campus-card h3{
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+
+.campus-card p{
+
+    color: #6b7280;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+/* List */
+
+.campus-card ul{
+
+    padding-left: 18px;
+
+    margin-bottom: 24px;
+}
+
+.campus-card ul li{
+
+    margin-bottom: 10px;
+
+    color: #374151;
+
+    font-size: 15px;
+}
+
+/* Button */
+
+.campus-btn{
+
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 12px;
+
+    background: rgba(165, 42, 42, 0.12);
+
+    color: #321f15d6;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.campus-btn:hover{
+
+    transform: scale(1.05);
+
+    background: rgba(165, 42, 42, 0.20);
+
+    color: #321f15d6;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .campus-section{
+        padding: 30px;
+    }
+
+    .campus-header h2{
+        font-size: 30px;
+    }
+
+    .campus-card h3{
+        font-size: 24px;
+    }
+}
+
+</style>
+
+        <!-- Content -->
+
+        <div class="row mt-4">
+
+            <!-- Chart -->
+
+            <!-- ======================================
+     ATTENDANCE SECTION
+====================================== -->
+
+<section id="attendance" class="attendance-section">
+    <!-- Header -->
+
+    <div class="attendance-header">
+
+        <h2>Attendance Management</h2>
+
+        <p>
+            Monitor student attendance,
+            faculty reports, class records,
+            and semester attendance analytics.
+        </p>
+
+    </div>
+
+    <!-- Attendance Cards -->
+
+    <div class="row g-4">
+
+        <!-- Student Attendance -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="attendance-card">
+
+                <div class="attendance-icon">
+                    <i class="bi bi-person-check"></i>
+                </div>
+
+                <h3>Student Attendance</h3>
+
+                <p>
+                    Manage daily student attendance,
+                    records, and attendance tracking.
+                </p>
+
+                <ul>
+                    <li>Daily Attendance</li>
+                    <li>Class-wise Reports</li>
+                    <li>Semester Tracking</li>
+                    <li>Attendance History</li>
+                </ul>
+
+                <a href="#" class="attendance-btn">
+                    View Attendance
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Faculty Reports -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="attendance-card">
+
+                <div class="attendance-icon">
+                    <i class="bi bi-bar-chart"></i>
+                </div>
+
+                <h3>Faculty Reports</h3>
+
+                <p>
+                    Generate attendance reports
+                    and monitor faculty records
+                    efficiently.
+                </p>
+
+                <ul>
+                    <li>Faculty Reports</li>
+                    <li>Attendance Statistics</li>
+                    <li>Monthly Reports</li>
+                    <li>Performance Tracking</li>
+                </ul>
+
+                <a href="#" class="attendance-btn">
+                    Generate Reports
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Attendance Analytics -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="attendance-card">
+
+                <div class="attendance-icon">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </div>
+
+                <h3>Attendance Analytics</h3>
+
+                <p>
+                    Analyze attendance percentage,
+                    trends, and semester
+                    performance reports.
+                </p>
+
+                <ul>
+                    <li>Attendance Analytics</li>
+                    <li>Percentage Reports</li>
+                    <li>Weekly Monitoring</li>
+                    <li>Trend Analysis</li>
+                </ul>
+
+                <a href="#" class="attendance-btn">
+                    View Analytics
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Biometric System -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="attendance-card">
+
+                <div class="attendance-icon">
+                    <i class="bi bi-fingerprint"></i>
+                </div>
+
+                <h3>Biometric System</h3>
+
+                <p>
+                    Smart biometric attendance
+                    system for secure and
+                    accurate attendance tracking.
+                </p>
+
+                <ul>
+                    <li>Fingerprint Access</li>
+                    <li>Secure Monitoring</li>
+                    <li>Smart Verification</li>
+                    <li>Real-time Records</li>
+                </ul>
+
+                <a href="#" class="attendance-btn">
+                    Open System
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Faculty Monitoring -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="attendance-card">
+
+                <div class="attendance-icon">
+                    <i class="bi bi-people"></i>
+                </div>
+
+                <h3>Faculty Monitoring</h3>
+
+                <p>
+                    Track faculty attendance,
+                    lecture schedules,
+                    and departmental activities.
+                </p>
+
+                <ul>
+                    <li>Lecture Tracking</li>
+                    <li>Faculty Monitoring</li>
+                    <li>Department Reports</li>
+                    <li>Schedule Records</li>
+                </ul>
+
+                <a href="#" class="attendance-btn">
+                    View Faculty Data
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Attendance Alerts -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="attendance-card">
+
+                <div class="attendance-icon">
+                    <i class="bi bi-bell"></i>
+                </div>
+                <h3>Attendance Alerts</h3>
+
+                <p>
+                    Automated alerts for low
+                    attendance percentage
+                    and important notifications.
+                </p>
+
+                <ul>
+                    <li>Low Attendance Alerts</li>
+                    <li>SMS Notifications</li>
+                    <li>Email Reports</li>
+                    <li>Parent Notifications</li>
+                </ul>
+
+                <a href="#" class="attendance-btn">
+                    Manage Alerts
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* ======================================
+   ATTENDANCE SECTION
+====================================== */
+
+.attendance-section{
+
+    margin-top: 50px;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 28px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* Header */
+
+.attendance-header{
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+.attendance-header h2{
+
+    font-size: 38px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    margin-bottom: 15px;
+}
+
+.attendance-header p{
+
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #6b7280;
+
+    line-height: 1.8;
+}
+
+/* Attendance Card */
+
+.attendance-card{
+
+    background: #f9fafb;
+
+    border-radius: 24px;
+
+    padding: 32px;
+
+    height: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: 0.35s ease;
+
+    border: 1px solid #eef2f7;
+}
+
+.attendance-card:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 16px 35px rgba(0,0,0,0.08);
+}
+
+/* Top Border */
+
+.attendance-card::before{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 5px;
+
+    background: #321f15d6;
+}
+
+/* Icon */
+
+.attendance-icon{
+
+    width: 78px;
+    height: 78px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background: linear-gradient(90deg,#b89a8ad6);
+
+    margin-bottom: 24px;
+}
+
+.attendance-icon i{
+
+    font-size: 34px;
+
+    color: black;
+}
+
+/* Heading */
+
+.attendance-card h3{
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    margin-bottom: 15px;
+}
+
+/* Paragraph */
+
+.attendance-card p{
+
+    color: #6b7280;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+/* List */
+
+.attendance-card ul{
+
+    padding-left: 18px;
+
+    margin-bottom: 24px;
+}
+
+.attendance-card ul li{
+
+    margin-bottom: 10px;
+
+    color: #374151;
+
+    font-size: 15px;
+}
+
+/* Button */
+
+.attendance-btn{
+
+    display: inline-block;
+
+    padding: 13px 24px;
+
+    border-radius: 12px;
+
+    background: rgba(165, 42, 42, 0.12);
+
+    color: #321f15d6;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+}
+
+.attendance-btn:hover{
+
+    transform: scale(1.05);
+
+    background: rgba(165, 42, 42, 0.20);
+
+    color: #321f15d6;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .attendance-section{
+        padding: 30px;
+    }
+
+    .attendance-header h2{
+        font-size: 30px;
+    }
+
+    .attendance-card h3{
+        font-size: 24px;
+    }
+}
+</style>
+<style>
+body{
+    background:#f4f7fb;
+    font-family:Poppins,sans-serif;
+}
+
+/* FLOATING BUTTON */
+.chat-toggle{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#321f15d6;
+    color:white;
+    border:none;
+    font-size:28px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+    z-index:999;
+}
+
+/* SMALL FLOATING CHATBOX */
+.chat-wrapper{
+    position:fixed;
+    right:20px;
+    bottom:90px;
+    width:320px;
+    height:420px;
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    display:none;
+    flex-direction:column;
+    z-index:999;
+}
+
+/* HEADER */
+.chat-header{
+    background:#321f15d6;
+    color:white;
+    padding:12px 15px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.chat-header i{
+    font-size:24px;
+    color:#facc15;
+}
+
+/* CHAT BODY */
+.chat-body{
+    flex:1;
+    overflow-y:auto;
+    padding:15px;
+    background:#fff;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+/* MESSAGE */
+.msg{
+    max-width:80%;
+    padding:10px 14px;
+    border-radius:14px;
+    font-size:14px;
+    line-height:1.4;
+}
+
+.user{
+    background:#321f15d6;
+    color:white;
+    align-self:flex-end;
+}
+
+.bot{
+    background:#f1f1f1;
+    color:#111;
+    align-self:flex-start;
+}
+
+/* INPUT */
+.chat-input{
+    display:flex;
+    border-top:1px solid #ddd;
+}
+
+.chat-input input{
+    flex:1;
+    border:none;
+    outline:none;
+    padding:12px;
+    font-size:14px;
+}
+
+.chat-input button{
+    background:#321f15d6;
+    color:white;
+    border:none;
+    padding:0 18px;
+}
+
+.chat-input button:hover{
+    background:#4a2f22;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FLOAT BUTTON -->
+<button class="chat-toggle" onclick="toggleChat()">
+    <i class="bi bi-chat-dots-fill"></i>
+</button>
+
+<!-- CHATBOX -->
+<div class="chat-wrapper" id="chatWrapper">
+
+    <div class="chat-header">
+        <i class="bi bi-robot"></i>
+        <div>
+            <h6 class="m-0">Shamika University</h6>
+            <small>Online</small>
+        </div>
+    </div>
+
+    <!-- CHAT BODY -->
+    <div class="chat-body" id="chatBox">
+
+        <div class="msg bot">
+            Hello 👋 How can I help you?
+        </div>
+
+    </div>
+
+    <!-- INPUT -->
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type message...">
+        <button onclick="sendMessage()">
+            <i class="bi bi-send"></i>
+        </button>
+    </div>
+
+</div>
+
+<script>
+
+/* OPEN CLOSE CHAT */
+function toggleChat(){
+    let chat = document.getElementById("chatWrapper");
+
+    if(chat.style.display === "flex"){
+        chat.style.display = "none";
+    }else{
+        chat.style.display = "flex";
+    }
+}
+
+/* SEND MESSAGE */
+function sendMessage(){
+
+    let input = document.getElementById("userInput");
+    let text = input.value.trim();
+
+    if(text === "") return;
+
+    let chatBox = document.getElementById("chatBox");
+
+    // USER MSG
+    let userMsg = document.createElement("div");
+    userMsg.className = "msg user";
+    userMsg.innerText = text;
+    chatBox.appendChild(userMsg);
+
+    // BOT MSG
+    let botMsg = document.createElement("div");
+    botMsg.className = "msg bot";
+
+    let reply = getBotReply(text.toLowerCase());
+
+    setTimeout(() => {
+
+        botMsg.innerText = reply;
+        chatBox.appendChild(botMsg);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+    },500);
+
+    input.value = "";
+}
+
+/* SIMPLE BOT */
+function getBotReply(msg){
+
+    if(msg.includes("attendance")){
+        return "Check attendance in dashboard.";
+    }
+
+    else if(msg.includes("result")){
+        return "Results available in result section.";
+    }
+
+    else if(msg.includes("fees")){
+        return "Fees payment available in fees section.";
+    }
+
+    else if(msg.includes("hello") || msg.includes("hi")){
+        return "Hello 👋";
+    }
+
+    else if(msg.includes("timetable")){
+        return "Timetable available in dashboard.";
+    }
+
+    else{
+        return "Sorry, I didn't understand.";
+    }
+}
+
+</script>
+
+
+</body>
+
+</html>

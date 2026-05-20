@@ -1,0 +1,353 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student management result system</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<style>
+body{
+    background-image: url("{% static 'campus.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+</style>
+
+<style>
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+</style>
+
+<div class="hero">
+
+    <h1>
+        <span class="shimmer">University Management</span> 
+    </h1>
+
+<style>
+.shimmer {
+    font-weight: bold;
+    font-size: 50px;
+    background: linear-gradient(
+        90deg,
+        #000 0%,
+        #facc15 50%,
+        #000 100%
+    );
+
+    background-size: 200% auto;
+
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+</style>
+
+    <p class="lead text-white">
+        A place where future leaders are created
+    </p>
+
+    <a href="{% url 'studentlogin' %}" class="btn btn-warning px-4 py-2 fw-bold rounded-pill">
+        Student Login
+    </a>
+
+</div>
+
+<!-- Simple Moving Strip -->
+
+<div class="marquee-strip">
+
+    <div class="marquee-content">
+        Admissions Open 2026 • Welcome to SHAMIKA University • NAAC Accredited University • Apply Now
+    </div>
+
+</div>
+
+<style>
+
+/* Strip */
+
+.marquee-strip{
+    width: 100%;
+    background: black;
+    border-top: 3px solid #facc15;
+    border-bottom: 3px solid #facc15;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    padding: 8px 0;
+    margin: 0;
+    line-height: normal;
+}
+
+/* Moving Text */
+
+.marquee-content{
+    display: inline-block;
+    color: #facc15;
+    font-size: 18px;
+    font-weight: 600;
+
+    padding-left: 100%;
+
+    animation: marquee 15s linear infinite;
+}
+
+/* Animation */
+
+@keyframes marquee{
+
+    0%{
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+</style>
+
+<style>
+
+/* Navbar fix */
+
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;   
+    z-index: 1000;
+}
+
+/* Sidebar fix */
+
+.sidebar{
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+}
+
+/* Hero section with image */
+
+.hero{
+    margin-top: 80px;           
+    margin-left: 250px;          
+
+    height: calc(100vh - 80px);
+
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("{% static 'campus.jpg' %}");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+    text-align: center;
+}
+
+</style>
+
+<div class="bg-dark text-white p-3 sidebar"></div>
+
+<!-- Navbar -->
+
+<nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand d-flex align-items-center" href="#">
+
+                <img src="{% static 'images/logo.png' %}" class="logo-img">
+
+                <span class="brand-text">
+                    Shamika <br> University
+                </span>
+
+            </a>
+
+<style>
+.logo-img{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+</style>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li>
+                            <a class="nav-link" href="{% url 'about' %}">
+                                ABOUT
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="{% url 'academic' %}">
+                                ACADEMIC
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="{% url 'gallery' %}">
+                                GALLERY
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="{% url 'contact' %}">
+                                CONTACT
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="nav-link" href="{% url 'feespyment' %}">
+                                FEES PYMENT
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+</nav>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="bg-dark text-white p-3 position-fixed"
+     style="width:250px; height:100vh; top:90px; left:0;">
+
+    <h2 class="text-center">SMS</h2>
+
+    <hr>
+
+    <ul class="nav flex-column">
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'dashboard' %}">
+                DASHBOARD
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'administration' %}">
+                ADMINISTRATION
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'student' %}">
+                STUDENTS
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'teacher' %}">
+                TEACHERS
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'courses' %}">
+                COURSES
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'facilities' %}">
+                FACILITIES
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{% url 'result' %}">
+                RESULT
+            </a>
+        </li>
+
+    </ul>
+
+</div>
+
+<style>
+
+.nav-link{
+    transition: 0.3s;
+}
+
+.nav-link:hover{
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+}
+
+</style>
+
+</body>
+</html>
